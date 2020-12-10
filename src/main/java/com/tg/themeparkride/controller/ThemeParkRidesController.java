@@ -22,6 +22,12 @@ public class ThemeParkRidesController {
     public ThemeParkRidesController(ThemeParkRidesRepository themeParkRidesRepository) {
         this.themeParkRidesRepository = themeParkRidesRepository;
     }
+    
+    @GetMapping(value = "/")
+    public String welcome() {
+        return "<html><body><h1 style='text-align:center'>Welcome To Theme Park Rides</h1></body></html>";
+    }
+
 
     @GetMapping(value = "/ride", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<ThemeParkRidesEntity> getRides() {
